@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.gallery {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    height: 15rem;
+}
+
+figure {
+    height: 15rem;
+    border-radius: 10px
+}
+
+
+figure:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+    animation: gradient 5s ease infinite;
+}
+
+/* figure:has(figcaption) {
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #0E6655, #D0ECE7);
+    color: white;
+    height: 18rem;
+    background-size: 400% 400%;
+} */
+
+figcaption {
+    padding: 0.2em;
+    text-align: center;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@supports(selector(:has(*))) {
+    figure:has(figcaption) {
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(to right, #0E6655, #D0ECE7);
+        color: white;
+        height: 18rem;
+        background-size: 400% 400%;
+    }
+}
