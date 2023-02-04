@@ -28,15 +28,6 @@ figure:hover {
     animation: gradient 5s ease infinite;
 }
 
-/* figure:has(figcaption) {
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(to right, #0E6655, #D0ECE7);
-    color: white;
-    height: 18rem;
-    background-size: 400% 400%;
-} */
-
 figcaption {
     padding: 0.2em;
     text-align: center;
@@ -45,16 +36,21 @@ figcaption {
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
+        color: black;
     }
 
     50% {
         background-position: 100% 50%;
+        color: black;
     }
 
     100% {
         background-position: 0% 50%;
+        color: black;
     }
 }
+
+
 
 @supports(selector(:has(*))) {
     figure:has(figcaption) {

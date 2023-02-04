@@ -1,0 +1,42 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Oxygen, sans-serif;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#color-picker {
+    border: 3px solid rgba(15, 15, 15, 0.2);
+}
+
+.info {
+    width: 15em;
+    margin-left: 4em;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info-element {
+    display: flex;
+    margin-top: 2em;
+}
+
+.info-element-child {
+    margin-left: 2em;
+}
+
+.selected {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid rgba(15, 15, 15, 0.2);
+}
