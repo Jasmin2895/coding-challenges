@@ -9,10 +9,19 @@
 
     <h2>Color Picker with Filters</h2>
     <div class="container">
-        <canvas id="color-picker"></canvas>
+        <div>
+            <canvas id="color-picker"></canvas>
+            <code>Code block</code>
+        </div>
+
         <div class="info">
-            <h3>Selected Color</h3>
-            <div class="selected info-element-child"></div>
+            <div class="info-element">
+                <h3>Selected Color</h3>
+                <div class="selected info-element-child"></div>
+            </div>
+
+
+
 
             <div class="info-element">
                 <p>Select an opacity value</p>
@@ -28,7 +37,7 @@
 
             <div class="info-element">
                 <p>Contrast range slider:</p>
-                <input class="info-element-child" type="range" min="1" max="200" value="50"
+                <input class="info-element-child slider" type="range" min="1" max="200" value="50"
                     oninput="adjustFilter('contrast')" id="contrast">
                 <p>Grayscale range slider:</p>
                 <input class="info-element-child" type="range" min="1" max="200" value="50"
@@ -37,16 +46,16 @@
 
             <div class="info-element">
                 <p>Brightness range slider:</p>
-                <input class="info-element-child" type="range" min="1" max="200" value="50"
+                <input class="info-element-child slider" type="range" min="1" max="200" value="50"
                     oninput="adjustFilter('brightness')" id="brightness">
                 <p>Saturate range slider:</p>
-                <input class="info-element-child" type="range" min="1" max="200" value="50"
+                <input class="info-element-child slider" type="range" min="1" max="200" value="50"
                     oninput="adjustFilter('saturate')" id="saturate">
             </div>
 
             <div class="info-element">
                 <p>Sepia range slider:</p>
-                <input class="info-element-child" type="range" min="1" max="200" value="50"
+                <input class="info-element-child slider" type="range" min="1" max="200" value="50"
                     oninput="adjustFilter('sepia')" id="sepia">
             </div>
         </div>

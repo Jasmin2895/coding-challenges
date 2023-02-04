@@ -105,10 +105,9 @@ setInterval(() => picker.draw(), 1);
 picker.onChange((color) => {
     let selectedColor = document.getElementsByClassName("selected")[0];
     selectedColor.style.backgroundColor = `rgb(${color.r}, ${color.g}, ${color.b})`;
+    let codeBlock = document.getElementsByTagName('code')[0]
+    codeBlock.innerText = `background-color: rgb(${color.r}, ${color.g}, ${color.b})`
 });
-
-
-
 
 
 function applyOpacity() {
@@ -116,35 +115,56 @@ function applyOpacity() {
     console.log("applyOpacity", opacity)
     let selectedColor = document.getElementsByClassName("selected")[0];
     selectedColor.style.opacity = opacity
+    let codeBlock = document.getElementsByTagName('code')[0]
+    codeBlock.innerText = `${codeBlock.innerText}\n opacity:${opacity}`
 }
 
 // apply similar filters for contrast, opacity, hue-rotate and drop shadow.
 function adjustFilter(attribute) {
     let selectedColor = document.getElementsByClassName("selected")[0];
+    let codeBlock = document.getElementsByTagName('code')[0]
     switch (attribute) {
         case 'contrast':
             let colorContrast = document.getElementById('contrast').value;
             selectedColor.style.filter = `contrast(${colorContrast}%)`
+            codeBlock.innerText = replaceExistingValue(codeBlock.innerText, `filter:contrast`, `filter:contrast(${colorContrast}%)`)
             break;
         case 'grayscale':
             let grayscaleContrast = document.getElementById('grayscale').value;
             selectedColor.style.filter = `grayscale(${grayscaleContrast}%)`
+            codeBlock.innerText = `${codeBlock.innerText}\n filter:grayscale(${grayscaleContrast}%)`
             break;
         case 'brightness':
             let brightnessContrast = document.getElementById('brightness').value;
             selectedColor.style.filter = `brightness(${brightnessContrast}%)`
+            codeBlock.innerText = `${codeBlock.innerText}\n filter:brightness(${brightnessContrast}%)`
             break;
         case 'saturate':
             let saturateContrast = document.getElementById('saturate').value;
             selectedColor.style.filter = `saturate(${saturateContrast}%)`
+            codeBlock.innerText = `${codeBlock.innerText}\n filter:saturate(${saturateContrast}%)`
             break;
         case 'sepia':
             let sepiaContrast = document.getElementById('sepia').value;
             selectedColor.style.filter = `sepia(${sepiaContrast}%)`
+            codeBlock.innerText = `${codeBlock.innerText}\n filter:sepia(${sepiaContrast}%)`
             break;
         default:
             break;
     }
+}
 
-    console.log("updatd color", selectedColor.style.backgroundColor)
+function replaceExistingValue(existingText, searchSubstring, newFilterValue) {
+    console.log(existingText.indexOf(searchSubstring) > 0)
+    if (existingText.indexOf(searchSubstring) > 0) {
+        const re = new RegExp('\b' + searchSubstring + '.*\b', "g");
+        console.log("re", re, existingText)
+        const newStr = existingText.replace(re, "fgvbjn");
+        console.log("newStr", newStr)
+        console.log(newStr);
+        return newStr
+    } else {
+
+        return `${existingText} \n ${newFilterValue}`
+    }
 }
