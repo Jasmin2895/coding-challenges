@@ -7,14 +7,12 @@
 
 <body>
 
-    <h2>Let's Create a Color Picker</h2>
+    <h2>Color Picker with Filters</h2>
     <div class="container">
         <canvas id="color-picker"></canvas>
         <div class="info">
-            <div class="info-element">
-                <h3>Selected Color</h3>
-                <div class="selected info-element-child"></div>
-            </div>
+            <h3>Selected Color</h3>
+            <div class="selected info-element-child"></div>
 
             <div class="info-element">
                 <p>Select an opacity value</p>
@@ -32,9 +30,6 @@
                 <p>Contrast range slider:</p>
                 <input class="info-element-child" type="range" min="1" max="200" value="50"
                     oninput="adjustFilter('contrast')" id="contrast">
-            </div>
-
-            <div class="info-element">
                 <p>Grayscale range slider:</p>
                 <input class="info-element-child" type="range" min="1" max="200" value="50"
                     oninput="adjustFilter('grayscale')" id="grayscale">
@@ -44,9 +39,6 @@
                 <p>Brightness range slider:</p>
                 <input class="info-element-child" type="range" min="1" max="200" value="50"
                     oninput="adjustFilter('brightness')" id="brightness">
-            </div>
-
-            <div class="info-element">
                 <p>Saturate range slider:</p>
                 <input class="info-element-child" type="range" min="1" max="200" value="50"
                     oninput="adjustFilter('saturate')" id="saturate">

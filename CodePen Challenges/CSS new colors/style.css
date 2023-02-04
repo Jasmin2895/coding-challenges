@@ -1,17 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 html,
 body {
     width: 100%;
     height: 100%;
-    font-family: Oxygen, sans-serif;
+    font-family: 'Roboto Slab', serif;
     text-align: center;
 }
 
+h2 {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 3em;
+}
+
 .container {
-    width: 100%;
-    height: 100%;
+    width: 40%;
+    height: 40%;
+    margin: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 #color-picker {
@@ -35,8 +43,8 @@ body {
 }
 
 .selected {
-    width: 50px;
-    height: 50px;
+    width: 6em;
+    height: 6em;
     border-radius: 100%;
     border: 2px solid rgba(15, 15, 15, 0.2);
 }

@@ -145,4 +145,6 @@ function adjustFilter(attribute) {
         default:
             break;
     }
+
+    console.log("updatd color", selectedColor.style.backgroundColor)
 }
